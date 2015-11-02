@@ -1,0 +1,23 @@
+{
+  "name": "pomodoro",
+  "version": "0.0.1",
+  "description": "pomodoro timer adapter for timer.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skylerto/pomodoro.git"
+  },
+  "author": "Skyler Layne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skylerto/pomodoro/issues"
+  },
+  "homepage": "https://github.com/skylerto/pomodoro#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-uglify": "^1.4.2"
+  }
+}
