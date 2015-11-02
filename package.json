@@ -1,5 +1,5 @@
 {
-  "name": "pomodoro",
+  "name": "ptimer",
   "version": "0.0.1",
   "description": "pomodoro timer adapter for timer.js",
   "main": "index.js",
@@ -16,6 +16,7 @@
     "url": "https://github.com/skylerto/pomodoro/issues"
   },
   "dependencies": {
+    "jquery": "^2.1.4",
     "timer.js": "^1.0.3"
   },
   "homepage": "https://github.com/skylerto/pomodoro#readme",
