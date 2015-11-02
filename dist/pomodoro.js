@@ -1,9 +1,9 @@
 /*
-* Facade pattern for interfacing with the timer.js class.
-*/
+ * Facade pattern for interfacing with the timer.js class.
+ */
 
 /* Bind the elements to view elements off the bat */
-function Pomodoro(duration, minutesView, secondsView, pomodoroCounter){
+function Pomodoro(duration, minutesView, secondsView, pomodoroCounter) {
 
   // class variables
   this.duration = duration;
@@ -14,26 +14,36 @@ function Pomodoro(duration, minutesView, secondsView, pomodoroCounter){
   this.paused = false;
   var that = this;
   this.timer = new Timer({
-            tick: 1,
-            ontick  : function(sec) { that.getTime(sec) },
-            onstart : function() { console.log("Timer started")},
-            onstop  : function() { console.log('Timer stop')},
-            onpause : function() { that.onPause()},
-            onend   : function() { that.updatePomodoros()}
-          }); // Ensure that the document inherits this
+    tick: 1,
+    ontick: function(sec) {
+      that.getTime(sec)
+    },
+    onstart: function() {
+      console.log("Timer started")
+    },
+    onstop: function() {
+      console.log('Timer stop')
+    },
+    onpause: function() {
+      that.onPause()
+    },
+    onend: function() {
+      that.updatePomodoros()
+    }
+  }); // Ensure that the document inherits this
 
   // Function returns and updates the time on every tick.
   this.getTime = function(sec) {
 
     // Calulcate the minutes
-    var minutes = Math.floor( (sec/1000/60) % 60 );
-    if(minutes < 10) {
+    var minutes = Math.floor((sec / 1000 / 60) % 60);
+    if (minutes < 10) {
       minutes = "0" + minutes;
     }
 
     // Calculate the seconds
-    var seconds = Math.floor( (sec/1000) % 60 );
-    if(seconds < 10){
+    var seconds = Math.floor((sec / 1000) % 60);
+    if (seconds < 10) {
       seconds = "0" + seconds;
     }
 
@@ -44,8 +54,8 @@ function Pomodoro(duration, minutesView, secondsView, pomodoroCounter){
   };
 
   // What to run on start of the timer.
-  this.start = function(){
-    if(this.paused){
+  this.start = function() {
+    if (this.paused) {
       this.timer.start();
       // Change the view back
       this.paused = false;
@@ -56,16 +66,16 @@ function Pomodoro(duration, minutesView, secondsView, pomodoroCounter){
   };
 
   // Update the number of pomodoros
-  this.updatePomodoros = function(){
-      this.numberOfPomodoros++;
-      console.log("Poms", this.numberOfPomodoros)
-      $(this.pomodoroCounter_view).html(this.numberOfPomodoros);
-      this.timer.stop();
+  this.updatePomodoros = function() {
+    this.numberOfPomodoros++;
+    console.log("Poms", this.numberOfPomodoros)
+    $(this.pomodoroCounter_view).html(this.numberOfPomodoros);
+    this.timer.stop();
   }
 
   // What to do when someone pauses
-  this.onPause = function(){
-    if(this.paused){
+  this.onPause = function() {
+    if (this.paused) {
       console.log('okay something happened?');
     }
     this.paused = true;
@@ -75,7 +85,7 @@ function Pomodoro(duration, minutesView, secondsView, pomodoroCounter){
   }
 
   // Facade function for pausing the timer.
-  this.pause = function(){
+  this.pause = function() {
     this.timer.pause();
   }
 }
