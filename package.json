@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/skylerto/pomodoro/issues"
   },
+  "dependencies": {
+    "timer.js": "^1.0.3"
+  },
   "homepage": "https://github.com/skylerto/pomodoro#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
