@@ -18,11 +18,10 @@
 
   /* Bind the elements to view elements off the bat */
   function Break(minutesView, secondsView, pomodoroCounter) {
-    var duration = 5 * 60;
-    var pomodoro = new Pomodoro(duration, minutesView, secondsView, pomodoroCounter);
+     this.duration = 5 * 60;
+     this.pomodoro = new Pomodoro(this.duration, minutesView, secondsView, pomodoroCounter);
+     return this.pomodoro;
   };
-
-  Break.prototype = Object.create(Pomodoro.prototype);
 
   return Break;
 }));
