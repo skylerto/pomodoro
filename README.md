@@ -36,11 +36,12 @@ var pomodoroBreak = new Break(minuteViewComponent, secondViewComponent, pomodoro
 ```
 
 ## API
-### `.getTime()`
-Executes every tick of the timer, updating the `minuteViewComponent` and `secondViewComponent` to reflect the remaining duration.
 
 ### `.start()`
 Must be executed to start the timer. Beginning from the `duration` down to 0.
+
+### `.getTime()`
+Executes every tick of the timer, updating the `minuteViewComponent` and `secondViewComponent` to reflect the remaining duration.
 
 ### `.updatePomodoros()`
 Executes once the timer reaches 0 updates the `pomodoroDisplayViewComponent` to relect the number of timers the object has completed.
