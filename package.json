@@ -4,7 +4,7 @@
   "description": "pomodoro timer adapter for timer.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha spec"
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,12 @@
   },
   "homepage": "https://github.com/skylerto/pomodoro#readme",
   "devDependencies": {
+    "chai": "3.5.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
+    "gulp-mocha": "2.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.4.2"
+    "gulp-uglify": "^1.4.2",
+    "mocha": "2.4.5"
   }
 }

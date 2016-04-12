@@ -1,3 +1,22 @@
+'use strict';
+
+module.exports = class Break {
+
+  /**
+   *
+   */
+  constructor(duration) {
+    this._duration = duration * 60;
+  }
+
+  get duration(){
+    return this._duration;
+  }
+
+
+}
+
+
 (function(name, definition) {
   var hasDefine = typeof define === 'function',
     hasExports = typeof module !== 'undefined' && module.exports;
