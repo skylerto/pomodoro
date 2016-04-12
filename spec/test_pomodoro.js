@@ -1,6 +1,5 @@
 'use strict';
 
-const assert = require('chai').assert;
 const expect = require('chai').expect;
 const Pomodoro = require('../src/pomodoro.js');
 const Timer = require('../src/timer.js');
@@ -15,6 +14,20 @@ describe('Pomodoro', function(){
     expect(pom.breakTimer.duration).to.equal(time.duration);
   });
 
-  it('', function(){});
+  it('should start a task', function(){
+    const pom = new Pomodoro(1,1);
+    pom.startTask();
+    setInterval(() => {
+      expect(pom.taskTimer.duration).to.equal(0);
+      pom.startBreak();
+      expect(pom.taskTimer.duration).to.equal(60);
+      setInterval(() => {
+        expect(pom.breakTimer.duration).to.equal(10);
+      }, 60000);
+    }, 60000);
+    
+
+
+  });
   it('', function(){});
 });

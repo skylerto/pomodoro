@@ -17,6 +17,9 @@ module.exports = class Timer {
     this.orgDuration = this._duration;
   }
 
+  /**
+   * Get the current duration on the timer.
+   */
   get duration(){
     return this._duration;
   }
