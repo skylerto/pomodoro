@@ -14,17 +14,27 @@ module.exports = class Timer {
     } else {
       this._duration = duration * 60;
     }
-    this.start();
+    this.orgDuration = this._duration;
   }
 
   get duration(){
     return this._duration;
   }
 
+  /**
+   * Start the timer.
+   */
   start(){
     setInterval(() => {
       this._duration--;
     },1000);
+  }
+
+  /**
+   * Resets the duration to the original duration
+   */
+  reset(){
+    this._duration = this.orgDuration;
   }
 
 };

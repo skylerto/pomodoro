@@ -17,6 +17,7 @@ describe('Timer', function(){
   it('should count down and stop at 0', function(){
     const timer = new Timer(1);
     assert.equal(60, timer.duration);
+    timer.start();
     setInterval(() => {
       assert.equal(0, timer.duration);
     }, 60000);
