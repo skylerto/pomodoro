@@ -3,7 +3,7 @@ Status](https://travis-ci.org/skylerto/pomodoro.svg?branch=master)](https://trav
 [![npm version](https://badge.fury.io/js/ptimer.svg)](https://badge.fury.io/js/ptimer)
 
 # Pomodoro
-A pomodoro adapter for timer.js that binds view elements to timer for direct object manipulation.
+A pomodoro timer in pure JavaScript.
 
 ## Installation
 Available through npm as ptimer.
@@ -25,6 +25,8 @@ const pomodoro = new Pomodoro(taskDuration, breakDuration);
 ```
 
 ## API
+
+For the full API view the [documentation](http://skylerlayne.me/pomodoro/).
 
 ### `.startTask()`
 Must be executed to start the task timer, condition is that the `breakTimer` is at 0 duration. Beginning from the `duration` down to 0.
