@@ -26,9 +26,13 @@ module.exports = class Pomodoro {
 
   startTask(){
     this._taskTimer.start();
+    this._breakTimer.reset();
   }
 
   startBreak(){
-    this._breakTimer.start();
+    if (this.taskTimer.duration === 0) {
+      this._breakTimer.start();
+      this._taskTimer.reset();
+    }
   }
 };

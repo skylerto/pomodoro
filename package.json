@@ -4,7 +4,9 @@
   "description": "pomodoro timer adapter for timer.js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec"
+    "test": "./scripts/test",
+    "lint": "eslint . --max-warnings 0",
+    "build": "babel src/ build/"
   },
   "repository": {
     "type": "git",
@@ -21,13 +23,27 @@
   },
   "homepage": "https://github.com/skylerto/pomodoro#readme",
   "devDependencies": {
+    "babel": "6.5.2",
     "chai": "3.5.0",
+    "eslint": "2.7.0",
+    "eslint-plugin-shopify": "10.8.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-mocha": "2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.4.2",
     "mocha": "2.4.5",
-    "sinon": "1.17.3"
+    "qunit": "0.9.1",
+    "sinon": "1.17.3",
+    "testem": "1.6.0",
+    "yuidocjs": "0.10.0"
+  },
+  "eslintConfig": {
+    "extends": "plugin:shopify/esnext",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {}
   }
 }

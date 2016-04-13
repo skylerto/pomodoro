@@ -3,7 +3,7 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const sinon = require('sinon');
-const Timer = require('../src/timer.js');
+const Timer = require('../../src/timer.js');
 
 describe('Timer', function(){
 
