@@ -24,13 +24,24 @@ module.exports = class Timer {
     return this._duration;
   }
 
+  set duration(duration) {
+    this._duration = duration;
+  }
+
+  tick() {
+    this._duration--;
+  }
+
   /**
    * Start the timer.
    */
   start(){
-    setInterval(() => {
-      this._duration--;
-    },1000);
+    let timer = setInterval(() => {
+      if (this._duration === 1){
+        clearInterval(timer);
+      }
+      this.tick();
+    }, 1000);
   }
 
   /**

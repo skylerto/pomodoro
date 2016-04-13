@@ -1,9 +1,20 @@
 'use strict';
 
 const assert = require('chai').assert;
+const expect = require('chai').expect;
+const sinon = require('sinon');
 const Timer = require('../src/timer.js');
 
 describe('Timer', function(){
+
+  beforeEach(function () {
+    this.clock = sinon.useFakeTimers(); 
+  });
+
+  afterEach(function () {
+    this.clock.restore();
+  });
+
   it('should create a timer with default value 25 minutes', function(){
     const timer = new Timer();
     assert.equal(1500, timer.duration);
@@ -15,15 +26,11 @@ describe('Timer', function(){
   });
 
   it('should count down and stop at 0', function(){
-    const timer = new Timer(1);
-    assert.equal(60, timer.duration);
+    const timer = new Timer(0.1);
+    assert.equal(6, timer.duration);
     timer.start();
-    setInterval(() => {
-      assert.equal(0, timer.duration);
-    }, 60000);
-
-    setInterval(() => {
-      assert.equal(0, timer.duration);
-    }, 1000);
+    this.clock.tick(6000);
+    expect(timer.duration).to.equal(0);
+    assert.equal(0, timer.duration);
   });
 });
