@@ -1,0 +1,9 @@
+{
+  "test_page": "spec/browser/index.html",
+  "launch_in_dev": [
+    "phantomjs"
+  ],
+  "launch_in_ci": [
+    "PhantomJS"
+  ]
+}

@@ -3,4 +3,4 @@
 npm run lint
 npm run build
 mocha spec/node
-qunit spec/browser
+testem ci

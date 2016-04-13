@@ -10,11 +10,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  *  @class Timer
  *  @constructor
  */
-module.exports = function () {
+var Timer = function () {
+
+  /**
+   * Constructor to create a new Timer.
+   * Involked with the new keyword.
+   *
+   * @method constructor
+   * @param {Number} [duration] The time to create the timer with.
+   * @return {Timer} a new Timer object.
+   */
+
   function Timer(duration) {
     _classCallCheck(this, Timer);
 
-    if (duration == null) {
+    if (!duration) {
       this._duration = 25 * 60;
     } else {
       this._duration = duration * 60;
@@ -24,17 +34,29 @@ module.exports = function () {
 
   /**
    * Get the current duration on the timer.
+   *
+   * @property duration
+   * @type {Number}
    */
 
 
   _createClass(Timer, [{
     key: "tick",
+
+
+    /**
+     * Decrease the duration by 1, simulating a single clock tick.
+     *
+     * @method tick
+     */
     value: function tick() {
       this._duration--;
     }
 
     /**
      * Start the timer.
+     *
+     * @method start
      */
 
   }, {
@@ -51,7 +73,9 @@ module.exports = function () {
     }
 
     /**
-     *  Pause the timer.
+     * Pause the timer.
+     *
+     * @method pause
      */
 
   }, {
@@ -63,7 +87,9 @@ module.exports = function () {
     }
 
     /**
-     * Resets the duration to the original duration
+     * Resets the duration to the original duration.
+     *
+     * @method reset
      */
 
   }, {
@@ -75,11 +101,10 @@ module.exports = function () {
     key: "duration",
     get: function get() {
       return this._duration;
-    },
-    set: function set(duration) {
-      this._duration = duration;
     }
   }]);
 
   return Timer;
 }();
+
+module.exports = Timer;

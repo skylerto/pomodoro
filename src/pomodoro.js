@@ -1,4 +1,6 @@
-const Timer = require('./timer.js');
+if (typeof require !== 'undefined') {
+  var Timer = require('./timer.js'); // eslint-disable-line no-var
+}
 
 /**
  * This class manages 2 timers, a break timer and a task timer.
@@ -6,7 +8,8 @@ const Timer = require('./timer.js');
  * @class Pomodoro
  * @constructor
  */
-module.exports = class Pomodoro {
+const Pomodoro = class Pomodoro {
+
 
   /**
    * Contructor to create a new Pomodoro.
@@ -20,14 +23,14 @@ module.exports = class Pomodoro {
    */
   constructor(taskTime, breakTime) {
     if (!taskTime) {
-      this._taskTimer = new Timer();
+      this._taskTimer = new Timer(); // eslint-disable-line block-scoped-var
     } else {
-      this._taskTimer = new Timer(taskTime);
+      this._taskTimer = new Timer(taskTime); // eslint-disable-line block-scoped-var
     }
     if (!breakTime) {
-      this._breakTimer = new Timer(5);
+      this._breakTimer = new Timer(5); // eslint-disable-line block-scoped-var
     } else {
-      this._breakTimer = new Timer(breakTime);
+      this._breakTimer = new Timer(breakTime); // eslint-disable-line block-scoped-var
     }
   }
 
@@ -75,3 +78,5 @@ module.exports = class Pomodoro {
     }
   }
 };
+
+module.exports = Pomodoro;

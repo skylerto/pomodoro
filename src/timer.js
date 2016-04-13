@@ -4,7 +4,7 @@
  *  @class Timer
  *  @constructor
  */
-module.exports = class Timer {
+const Timer = class Timer {
 
   /**
    * Constructor to create a new Timer.
@@ -77,3 +77,5 @@ module.exports = class Timer {
   }
 
 };
+
+module.exports = Timer;

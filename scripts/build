@@ -1,0 +1,4 @@
+#! /bin/bash
+
+babel --presets es2015 src/ -d build/
+
