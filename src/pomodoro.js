@@ -9,11 +9,12 @@ const Timer = require('./timer.js');
 module.exports = class Pomodoro {
 
   /**
-   * Contructor to create a new Pomodoro. Involked with new.
+   * Contructor to create a new Pomodoro.
+   * Involked with new.
    *
    * @method constructor
-   * @param {Int} [taskTime] The time in minutes to instantiate the taskTimer with.
-   * @param {Int} [breakTime] The time in minutes to instantiate the breakTimer
+   * @param {Number} [taskTime] The time in minutes to instantiate the taskTimer with.
+   * @param {Number} [breakTime] The time in minutes to instantiate the breakTimer
    * with.
    * @return {Pomodoro} a new Pomodoro object.
    */
@@ -34,8 +35,8 @@ module.exports = class Pomodoro {
    *  Get the taskTimer.
    *  Involked by instance.taskTimer.
    *
-   * @method taskTimer
-   * @return {Timer} a Timer instance representing the taskTimer.
+   * @property taskTimer
+   * @type {Timer}
    */
   get taskTimer() {
     return this._taskTimer;
@@ -45,8 +46,8 @@ module.exports = class Pomodoro {
    * Get the breakTimer.
    * Involked by instance.breakTimer.
    *
-   * @method breakTimer
-   * @return {Timer} a Timer instance representing the breakTimer.
+   * @property breakTimer
+   * @type {Timer}
    */
   get breakTimer() {
     return this._breakTimer;
