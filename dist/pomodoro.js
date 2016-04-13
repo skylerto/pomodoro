@@ -102,6 +102,36 @@ var Timer = function () {
     get: function get() {
       return this._duration;
     }
+
+    /**
+     * Get the number of minutes left on the timer.
+     *
+     * @property minutes
+     * @type {Number}
+     */
+
+  }, {
+    key: "minutes",
+    get: function get() {
+      if (this._duration > 0) {
+        return Math.floor(this._duration / 60);
+      } else {
+        return 0;
+      }
+    }
+
+    /**
+     * Get the number of seconds left on the timer.
+     *
+     * @property seconds
+     * @type {Number}
+     */
+
+  }, {
+    key: "seconds",
+    get: function get() {
+      return this._duration % 60;
+    }
   }]);
 
   return Timer;
@@ -115,7 +145,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 if (typeof require !== 'undefined') {
- // var Timer = require('./timer.js'); // eslint-disable-line no-var
+  var Timer = require('./timer.js'); // eslint-disable-line no-var
 }
 
 /**

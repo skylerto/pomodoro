@@ -80,4 +80,21 @@ describe('Timer', () => {
     this.clock.tick(30000);
     expect(timer.duration).to.equal(0);
   });
+
+  it('should give back the minutes and seconds of a timer', () => {
+    const timer = new Timer(1.5); // 90 seconds aka 1 minute 30 seconds
+    expect(timer.minutes).to.equal(1);
+    expect(timer.seconds).to.equal(30);
+  });
+
+  it('should give back 0 mins, 0 secs when timer is done', () => {
+    const timer = new Timer(1); // 90 seconds aka 1 minute 30 seconds
+    timer.start();
+    this.clock.tick(60000);
+    expect(timer.minutes).to.equal(0);
+    expect(timer.seconds).to.equal(0);
+    timer.reset();
+    expect(timer.minutes).to.equal(1);
+    expect(timer.seconds).to.equal(30);
+  });
 });

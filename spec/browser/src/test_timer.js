@@ -12,7 +12,7 @@ QUnit.test( "Start a timer", function( assert ) {
   setTimeout(function() {
     assert.equal(timer.duration, 0, "Timer runs down to 0" );
     QUnit.start();
-  }, 3010);
+  }, 4000);
 
 });
 
@@ -27,7 +27,7 @@ QUnit.test( "Start a timer after one's finished", function( assert ) {
     assert.equal(timer.duration, 3, "Timer reseet to 3 seconds" );
     QUnit.start();
 
-  }, 3010);
+  }, 4000);
 
 
 });
