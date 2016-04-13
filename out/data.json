@@ -143,6 +143,24 @@
         {
             "file": "src/timer.js",
             "line": 36,
+            "description": "Get the number of minutes left on the timer.",
+            "itemtype": "property",
+            "name": "minutes",
+            "type": "{Number}",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 50,
+            "description": "Get the number of seconds left on the timer.",
+            "itemtype": "property",
+            "name": "seconds",
+            "type": "{Number}",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 60,
             "description": "Decrease the duration by 1, simulating a single clock tick.",
             "itemtype": "method",
             "name": "tick",
@@ -150,7 +168,7 @@
         },
         {
             "file": "src/timer.js",
-            "line": 45,
+            "line": 69,
             "description": "Start the timer.",
             "itemtype": "method",
             "name": "start",
@@ -158,7 +176,7 @@
         },
         {
             "file": "src/timer.js",
-            "line": 59,
+            "line": 83,
             "description": "Pause the timer.",
             "itemtype": "method",
             "name": "pause",
@@ -166,7 +184,7 @@
         },
         {
             "file": "src/timer.js",
-            "line": 70,
+            "line": 94,
             "description": "Resets the duration to the original duration.",
             "itemtype": "method",
             "name": "reset",
