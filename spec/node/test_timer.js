@@ -1,4 +1,3 @@
-/* eslint strict: ["error", "global"] */
 'use strict';
 
 const assert = require('chai').assert;
@@ -38,5 +37,48 @@ describe('Timer', () => {
     this.clock.tick(6000);
     expect(timer.duration).to.equal(0);
     assert.equal(0, timer.duration);
+  });
+
+  it('should be at 30 seconds, at 30 seconds in', () => {
+    const timer = new Timer(1);
+    assert.equal(60, timer.duration);
+    timer.start();
+    this.clock.tick(30000);
+    expect(timer.duration).to.equal(30);
+    this.clock.tick(30000);
+    assert.equal(0, timer.duration);
+  });
+
+  it('should reset the timer', () => {
+    const timer = new Timer(1);
+    assert.equal(60, timer.duration);
+    timer.start();
+    this.clock.tick(60000);
+    expect(timer.duration).to.equal(0);
+    timer.reset();
+    expect(timer.duration).to.equal(60);
+  });
+
+  it('should pause the timer', () => {
+    const timer = new Timer(1);
+    timer.start();
+    this.clock.tick(30000);
+    expect(timer.duration).to.equal(30);
+    timer.pause();
+    this.clock.tick(30000);
+    expect(timer.duration).to.equal(30);
+  });
+
+  it('should pause the timer, then start from the same duration', () => {
+    const timer = new Timer(1);
+    timer.start();
+    this.clock.tick(30000);
+    expect(timer.duration).to.equal(30);
+    timer.pause();
+    this.clock.tick(30000);
+    expect(timer.duration).to.equal(30);
+    timer.start();
+    this.clock.tick(30000);
+    expect(timer.duration).to.equal(0);
   });
 });

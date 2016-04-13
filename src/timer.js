@@ -34,12 +34,21 @@ module.exports = class Timer {
    * Start the timer.
    */
   start() {
-    const timer = setInterval(() => {
+    this.timer = setInterval(() => {
       if (this._duration === 1) {
-        clearInterval(timer);
+        clearInterval(this.timer);
       }
       this.tick();
     }, 1000);
+  }
+
+  /**
+   *  Pause the timer.
+   */
+  pause() {
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
   }
 
   /**

@@ -10,12 +10,12 @@ module.exports = function () {
   function Pomodoro(taskTime, breakTime) {
     _classCallCheck(this, Pomodoro);
 
-    if (taskTime == null) {
+    if (!taskTime) {
       this._taskTimer = new Timer();
     } else {
       this._taskTimer = new Timer(taskTime);
     }
-    if (breakTime == null) {
+    if (!breakTime) {
       this._breakTimer = new Timer(5);
     } else {
       this._breakTimer = new Timer(breakTime);

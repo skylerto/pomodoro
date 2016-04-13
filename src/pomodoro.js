@@ -2,12 +2,12 @@ const Timer = require('./timer.js');
 
 module.exports = class Pomodoro {
   constructor(taskTime, breakTime) {
-    if (taskTime == null) {
+    if (!taskTime) {
       this._taskTimer = new Timer();
     } else {
       this._taskTimer = new Timer(taskTime);
     }
-    if (breakTime == null) {
+    if (!breakTime) {
       this._breakTimer = new Timer(5);
     } else {
       this._breakTimer = new Timer(breakTime);
@@ -33,4 +33,4 @@ module.exports = class Pomodoro {
       this._taskTimer.reset();
     }
   }
-}
+};

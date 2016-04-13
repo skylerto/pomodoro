@@ -42,12 +42,24 @@ module.exports = function () {
     value: function start() {
       var _this = this;
 
-      var timer = setInterval(function () {
+      this.timer = setInterval(function () {
         if (_this._duration === 1) {
-          clearInterval(timer);
+          clearInterval(_this.timer);
         }
         _this.tick();
       }, 1000);
+    }
+
+    /**
+     *  Pause the timer.
+     */
+
+  }, {
+    key: "pause",
+    value: function pause() {
+      if (this.timer) {
+        clearInterval(this.timer);
+      }
     }
 
     /**
