@@ -115,7 +115,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 if (typeof require !== 'undefined') {
-  var Timer = require('./timer.js'); // eslint-disable-line no-var
+ // var Timer = require('./timer.js'); // eslint-disable-line no-var
 }
 
 /**

@@ -1,8 +1,8 @@
 {
   "name": "ptimer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "pomodoro timer adapter for timer.js",
-  "main": "index.js",
+  "main": "dist/pomodoro.js",
   "scripts": {
     "test": "./scripts/test",
     "lint": "eslint .",

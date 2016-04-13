@@ -12,6 +12,11 @@ Available through npm as ptimer.
 npm install ptimer
 ```
 
+add a require to your js
+``` javascript
+const Pomodoro = require('ptimer');
+```
+
 ## Usage
 
 ### Creating a General Timer
