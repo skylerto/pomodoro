@@ -1,12 +1,13 @@
 {
   "name": "ptimer",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "pomodoro timer adapter for timer.js",
-  "main": "build/pomodoro.js",
+  "main": "dist/pomodoro.js",
   "scripts": {
     "test": "./scripts/test",
     "lint": "eslint .",
-    "build": "./scripts/build"
+    "build": "./scripts/build",
+    "doc": "./scripts/doc"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "qunit": "0.9.1",
     "sinon": "1.17.3",
     "testem": "1.6.0",
+    "yuidoc-bootstrap-theme": "1.0.6",
     "yuidocjs": "0.10.0"
   },
   "eslintConfig": {
