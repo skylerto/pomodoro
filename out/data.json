@@ -1,0 +1,75 @@
+{
+    "project": {},
+    "files": {
+        "src/timer.js": {
+            "name": "src/timer.js",
+            "modules": {},
+            "classes": {
+                "Timer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Timer": {
+            "name": "Timer",
+            "shortname": "Timer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/timer.js",
+            "line": 1,
+            "description": "A class modelling a timer.",
+            "is_constructor": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/timer.js",
+            "line": 18,
+            "description": "Get the current duration on the timer.",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 33,
+            "description": "Start the timer.",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 45,
+            "description": "Pause the timer.",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 54,
+            "description": "Resets the duration to the original duration",
+            "class": "Timer"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nGet the current duration on the timer.",
+            "line": " src/timer.js:18"
+        },
+        {
+            "message": "Missing item type\nStart the timer.",
+            "line": " src/timer.js:33"
+        },
+        {
+            "message": "Missing item type\nPause the timer.",
+            "line": " src/timer.js:45"
+        },
+        {
+            "message": "Missing item type\nResets the duration to the original duration",
+            "line": " src/timer.js:54"
+        }
+    ]
+}
