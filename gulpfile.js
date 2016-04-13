@@ -1,16 +1,14 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var mocha = require('gulp-mocha');
+const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
 
 gulp.task('');
 
-gulp.task('compress', function() {
-  return gulp.src('src/*.js')
+gulp.task('compress', () => gulp.src('src/*.js')
          .pipe(concat('concat.js'))
          .pipe(gulp.dest('dist'))
          .pipe(rename('pomodoro.js'))
          .pipe(uglify())
-         .pipe(gulp.dest('dist'));
-});
+         .pipe(gulp.dest('dist'))
+);
