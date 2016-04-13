@@ -1,5 +1,3 @@
-'use strict';
-
 const expect = require('chai').expect;
 const Pomodoro = require('../../src/pomodoro.js');
 const Timer = require('../../src/timer.js');
@@ -7,15 +5,15 @@ const sinon = require('sinon');
 
 describe('Pomodoro', function(){
 
-  beforeEach(function () {
-    this.clock = sinon.useFakeTimers(); 
+  beforeEach(() => {
+    this.clock = sinon.useFakeTimers();
   });
 
-  afterEach(function () {
+  afterEach(() => {
     this.clock.restore();
   });
 
-  it('should create 2 timers', function(){
+  it('should create 2 timers', () => {
     const pom = new Pomodoro();
     let time = new Timer();
     expect(pom.taskTimer.duration).to.equal(time.duration);
@@ -23,14 +21,14 @@ describe('Pomodoro', function(){
     expect(pom.breakTimer.duration).to.equal(time.duration);
   });
 
-  it('should start a task', function(){
+  it('should start a task', () => {
     const pom = new Pomodoro();
     pom.startTask();
     this.clock.tick(25 * 60 * 1000);
     expect(pom.taskTimer.duration).to.equal(0);
   });
 
-  it('should start a break', function(){
+  it('should start a break', () => {
     const pom = new Pomodoro();
     pom.startTask();
     this.clock.tick(25 * 60 * 1000);

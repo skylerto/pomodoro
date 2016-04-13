@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  *  A class modelling a timer.
  *
@@ -8,8 +6,8 @@
  */
 module.exports = class Timer {
 
-  constructor(duration){
-    if(duration == null) {
+  constructor(duration) {
+    if (duration == null) {
       this._duration = 25 * 60;
     } else {
       this._duration = duration * 60;
@@ -20,7 +18,7 @@ module.exports = class Timer {
   /**
    * Get the current duration on the timer.
    */
-  get duration(){
+  get duration() {
     return this._duration;
   }
 
@@ -35,9 +33,9 @@ module.exports = class Timer {
   /**
    * Start the timer.
    */
-  start(){
-    let timer = setInterval(() => {
-      if (this._duration === 1){
+  start() {
+    const timer = setInterval(() => {
+      if (this._duration === 1) {
         clearInterval(timer);
       }
       this.tick();
@@ -47,7 +45,7 @@ module.exports = class Timer {
   /**
    * Resets the duration to the original duration
    */
-  reset(){
+  reset() {
     this._duration = this.orgDuration;
   }
 
