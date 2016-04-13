@@ -33,4 +33,4 @@ module.exports = class Pomodoro {
       this._taskTimer.reset();
     }
   }
-};
+}

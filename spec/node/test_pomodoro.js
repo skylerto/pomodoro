@@ -1,9 +1,19 @@
-const expect = require('chai').expect;
-const Pomodoro = require('../../src/pomodoro.js');
-const Timer = require('../../src/timer.js');
-const sinon = require('sinon');
+/* eslint strict: ["error", "global"] */
+'use strict';
 
-describe('Pomodoro', function(){
+// Module imports
+const expect = require('chai').expect;
+const sinon = require('sinon');
+const describe = require('mocha').describe;
+const it = require('mocha').it;
+const beforeEach = require('mocha').beforeEach;
+const afterEach = require('mocha').afterEach;
+
+// Class imports
+const Pomodoro = require('../../build/pomodoro.js');
+const Timer = require('../../build/timer.js');
+
+describe('Pomodoro', () => {
 
   beforeEach(() => {
     this.clock = sinon.useFakeTimers();

@@ -1,7 +1,15 @@
+/* eslint strict: ["error", "global"] */
+'use strict';
+
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const sinon = require('sinon');
-const Timer = require('../../src/timer.js');
+const describe = require('mocha').describe;
+const it = require('mocha').it;
+const beforeEach = require('mocha').beforeEach;
+const afterEach = require('mocha').afterEach;
+
+const Timer = require('../../build/timer.js');
 
 describe('Timer', () => {
 
