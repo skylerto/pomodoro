@@ -1,0 +1,177 @@
+{
+    "project": {},
+    "files": {
+        "src/pomodoro.js": {
+            "name": "src/pomodoro.js",
+            "modules": {},
+            "classes": {
+                "Pomodoro": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/timer.js": {
+            "name": "src/timer.js",
+            "modules": {},
+            "classes": {
+                "Timer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Pomodoro": {
+            "name": "Pomodoro",
+            "shortname": "Pomodoro",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/pomodoro.js",
+            "line": 5,
+            "description": "This class manages 2 timers, a break timer and a task timer.",
+            "is_constructor": 1
+        },
+        "Timer": {
+            "name": "Timer",
+            "shortname": "Timer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/timer.js",
+            "line": 1,
+            "description": "A class modelling a timer.",
+            "is_constructor": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/pomodoro.js",
+            "line": 14,
+            "description": "Contructor to create a new Pomodoro.\nInvolked with new.",
+            "itemtype": "method",
+            "name": "constructor",
+            "params": [
+                {
+                    "name": "taskTime",
+                    "description": "The time in minutes to instantiate the taskTimer with.",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "breakTime",
+                    "description": "The time in minutes to instantiate the breakTimer\nwith.",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "a new Pomodoro object.",
+                "type": "Pomodoro"
+            },
+            "class": "Pomodoro"
+        },
+        {
+            "file": "src/pomodoro.js",
+            "line": 37,
+            "description": "Get the taskTimer.\nInvolked by instance.taskTimer.",
+            "itemtype": "property",
+            "name": "taskTimer",
+            "type": "{Timer}",
+            "class": "Pomodoro"
+        },
+        {
+            "file": "src/pomodoro.js",
+            "line": 48,
+            "description": "Get the breakTimer.\nInvolked by instance.breakTimer.",
+            "itemtype": "property",
+            "name": "breakTimer",
+            "type": "{Timer}",
+            "class": "Pomodoro"
+        },
+        {
+            "file": "src/pomodoro.js",
+            "line": 59,
+            "description": "Start the taskTimer.",
+            "itemtype": "method",
+            "name": "startTask",
+            "class": "Pomodoro"
+        },
+        {
+            "file": "src/pomodoro.js",
+            "line": 69,
+            "description": "Start the breakTimer, on the condition that the taskTimer has completed.",
+            "itemtype": "method",
+            "name": "startBreak",
+            "class": "Pomodoro"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 9,
+            "description": "Constructor to create a new Timer.\nInvolked with the new keyword.",
+            "itemtype": "method",
+            "name": "constructor",
+            "params": [
+                {
+                    "name": "duration",
+                    "description": "The time to create the timer with.",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "a new Timer object.",
+                "type": "Timer"
+            },
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 26,
+            "description": "Get the current duration on the timer.",
+            "itemtype": "property",
+            "name": "duration",
+            "type": "{Number}",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 36,
+            "description": "Decrease the duration by 1, simulating a single clock tick.",
+            "itemtype": "method",
+            "name": "tick",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 45,
+            "description": "Start the timer.",
+            "itemtype": "method",
+            "name": "start",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 59,
+            "description": "Pause the timer.",
+            "itemtype": "method",
+            "name": "pause",
+            "class": "Timer"
+        },
+        {
+            "file": "src/timer.js",
+            "line": 70,
+            "description": "Resets the duration to the original duration.",
+            "itemtype": "method",
+            "name": "reset",
+            "class": "Timer"
+        }
+    ],
+    "warnings": []
+}

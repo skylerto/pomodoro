@@ -1,9 +1,0 @@
-{
-  "name": "pomodoro",
-  "version": "0.1.0",
-  "main":"dist/pomodoro.js",
-  "dependencies": {
-    "timer.js": "~0.1.1",
-    "jquery": "~2.1.4"
-  }
-}
