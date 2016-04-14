@@ -54,20 +54,28 @@ var Timer = function () {
     }
 
     /**
-     * Start the timer.
+     * Start the timer, call a callback every tick.
      *
+     * @param {Function} [callback] a function to call everytime the clock ticks.
      * @method start
      */
 
   }, {
     key: "start",
-    value: function start() {
+    value: function start(callback) {
       var _this = this;
 
+      if (callback) {
+        this.callback = callback;
+      }
       this.timer = setInterval(function () {
         if (_this._duration === 1) {
           clearInterval(_this.timer);
         }
+        if (_this.callback) {
+          _this.callback(_this._duration);
+        }
+
         _this.tick();
       }, 1000);
     }

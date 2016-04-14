@@ -97,4 +97,33 @@ describe('Timer', () => {
     expect(timer.minutes).to.equal(1);
     expect(timer.seconds).to.equal(30);
   });
+
+  it('start should take a callback', () => {
+    let one = 0;
+    const timer = new Timer(1.5); // 90 seconds aka 1 minute 30 seconds
+    timer.start(() => {
+      one++;
+    });
+    this.clock.tick(90000);
+    expect(one).to.equal(90);
+  });
+
+  it('should no call the callback on pause', () => {
+    let one = 0;
+    const timer = new Timer(1.5); // 90 seconds aka 1 minute 30 seconds
+    timer.start(() => {
+      one++;
+    });
+    this.clock.tick(30000);
+    expect(one).to.equal(30);
+
+    timer.pause();
+    this.clock.tick(30000);
+    expect(one).to.equal(30);
+
+    timer.start();
+    this.clock.tick(60000);
+    expect(one).to.equal(90);
+  
+  });
 });
