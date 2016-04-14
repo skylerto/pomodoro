@@ -54,7 +54,7 @@ var Timer = function () {
     }
 
     /**
-     * Start the timer, call a callback every tick.
+     * Start the timer, call a callback with `this` timer every tick.
      *
      * @param {Function} [callback] a function to call everytime the clock ticks.
      * @method start
@@ -73,7 +73,7 @@ var Timer = function () {
           clearInterval(_this.timer);
         }
         if (_this.callback) {
-          _this.callback(_this._duration);
+          _this.callback(_this);
         }
 
         _this.tick();

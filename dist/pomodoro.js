@@ -54,7 +54,7 @@ var Timer = function () {
     }
 
     /**
-     * Start the timer, call a callback every tick.
+     * Start the timer, call a callback with `this` timer every tick.
      *
      * @param {Function} [callback] a function to call everytime the clock ticks.
      * @method start
@@ -73,7 +73,7 @@ var Timer = function () {
           clearInterval(_this.timer);
         }
         if (_this.callback) {
-          _this.callback(_this._duration);
+          _this.callback(_this);
         }
 
         _this.tick();
@@ -204,26 +204,29 @@ var Pomodoro = function () {
 
 
     /**
-     * Start the taskTimer.
+     * Start the taskTimer, with a callback on every tick. See
+     * `Timer.start(callback)`.
      *
      * @method startTask
      */
-    value: function startTask() {
-      this._taskTimer.start();
+    value: function startTask(callback) {
+      this._taskTimer.start(callback);
       this._breakTimer.reset();
     }
 
     /**
-     * Start the breakTimer, on the condition that the taskTimer has completed.
+     * Start the breakTimer, with a callback on every tick. See
+     * `Timer.start(callback)`.
+     * Will only start on the condition that the taskTimer has completed.
      *
      * @method startBreak
      */
 
   }, {
     key: 'startBreak',
-    value: function startBreak() {
+    value: function startBreak(callback) {
       if (this.taskTimer.duration === 0) {
-        this._breakTimer.start();
+        this._breakTimer.start(callback);
         this._taskTimer.reset();
       }
     }

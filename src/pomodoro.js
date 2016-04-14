@@ -57,23 +57,26 @@ const Pomodoro = class Pomodoro {
   }
 
   /**
-   * Start the taskTimer.
+   * Start the taskTimer, with a callback on every tick. See
+   * `Timer.start(callback)`.
    *
    * @method startTask
    */
-  startTask() {
-    this._taskTimer.start();
+  startTask(callback) {
+    this._taskTimer.start(callback);
     this._breakTimer.reset();
   }
 
   /**
-   * Start the breakTimer, on the condition that the taskTimer has completed.
+   * Start the breakTimer, with a callback on every tick. See
+   * `Timer.start(callback)`.
+   * Will only start on the condition that the taskTimer has completed.
    *
    * @method startBreak
    */
-  startBreak() {
+  startBreak(callback) {
     if (this.taskTimer.duration === 0) {
-      this._breakTimer.start();
+      this._breakTimer.start(callback);
       this._taskTimer.reset();
     }
   }
