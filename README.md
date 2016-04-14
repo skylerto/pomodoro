@@ -28,11 +28,14 @@ const pomodoro = new Pomodoro(taskDuration, breakDuration);
 
 For the full API view the [documentation](http://skylerlayne.me/pomodoro/).
 
-### `.startTask()`
-Must be executed to start the task timer, condition is that the `breakTimer` is at 0 duration. Beginning from the `duration` down to 0.
+### `.startTask(callback)`
+Must be executed to start the task timer, executing the passed callback at every
+execution.
 
-### `.startBreak()`
-Must be executed to start the break timer, condition is that the `taskTimer` is at 0 duration. Beginning from the `duration` down to 0.
+### `.startBreak(callback)`
+Must be executed to start the break timer, executing the passed callback at every
+execution. The condition is that the `taskTimer` is at 0 duration. Beginning from the `duration` down to 0.
+
 
 ### `.taskDuration()`
 Gets the current duration of the task timer.
