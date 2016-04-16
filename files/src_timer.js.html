@@ -163,15 +163,23 @@ const Timer = class Timer {
   }
 
   /**
-   * Start the timer.
+   * Start the timer, call a callback with &#x60;this&#x60; timer every tick.
    *
+   * @param {Function} [callback] a function to call everytime the clock ticks.
    * @method start
    */
-  start() {
+  start(callback) {
+    if (callback) {
+      this.callback = callback;
+    }
     this.timer = setInterval(() =&gt; {
       if (this._duration === 1) {
         clearInterval(this.timer);
       }
+      if (this.callback) {
+        this.callback(this);
+      }
+
       this.tick();
     }, 1000);
   }
